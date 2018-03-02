@@ -11,7 +11,6 @@ Predicting risk classification for life insurance applicants
 
 {% include toc %}
 
-## Capstone Project: Prudential Life Insurance Assessment
 ### Background
 With the proliferation of the internet, many transactions take place online and are not limited to online shopping, banking transactions, booking of air tickets. Consumers are now used to the speed of these transactions and this is the primary reason to improve on the life insurance application process.
 The current life insurance application process takes an average of 30 days where customers provide extensive information to identify risk classification and eligibility, and may also include medical examinations. The development of a predictive model that classifies risk would expedite and make the insurance application process less labour intensive and in turn attract more customers.
