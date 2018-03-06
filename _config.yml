@@ -92,7 +92,7 @@ analytics:
 author:
   name             : *name
   avatar           : "/images/linkedin_photo.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Data Science <br>Python <br>Machine Learning <br>Hello, I speak Data!"
+  bio              : "Data Science <br>Python <br>Machine Learning <br>"
   location         : "Singapore"
   email            : "ryanchangky@gmail.com"
   uri              :
