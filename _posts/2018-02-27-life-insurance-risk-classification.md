@@ -9,17 +9,17 @@ Predicting risk classification for life insurance applicants
 
 {% include toc %}
 
-### Background
+## Background
 With the proliferation of the internet, many transactions take place online and are not limited to online shopping, banking transactions, booking of air tickets. Consumers are now used to the speed of these transactions and this is the primary reason to improve on the life insurance application process.
 
 The current life insurance application process takes an average of 30 days where customers provide extensive information to identify risk classification and eligibility, and may also include medical examinations. The development of a predictive model that classifies risk would expedite and make the insurance application process less labour intensive and in turn attract more customers.
 
 
-### Goals
+## Goals
 This is my capstone project for the Data Science Immersive Course that I am taking in General Assembly. Hence, I would be exploring the use of various machine learning techniques in order to build a predictive model that can accurately classify risk for life insurance applicants.
 
 
-### Data
+## Data
 Data provided consists of 59381 rows with 128 variables describing attributes of life insurance applicants. Besides the target and id variables, there are 13 continuous, 60 categorical, 5 discrete and 48 dummy variables. Other than the continuous variables such as BMI, Wt, Ht and Ins_Age, the remaining features are anonymized. 
 
 Variables                     | Description
@@ -39,8 +39,7 @@ Medical Keyword 1-48          | Dummy variables relating to the presence of a me
 Response                      | Target ordinal variable relating to the final decision associated with an application
 
 
-### Evaluation Metric
-
+## Evaluation Metric
 The metric used for evaluation is the Quadratic Weighted Kappa, which measures the agreement between two ratings. This metric typically varies from 0 (random agreement) to 1 (complete agreement). In the event that there is less agreement between the raters than expected by chance, this metric may go below 0.
 
 The response variable has 8 possible ratings from 1 to 8. Each application is characterized by a tuple [![eaeb]({{ site.url }}{{ site.baseurl }}/images/capstone/eaeb.jpg)]({{ site.url }}{{ site.baseurl }}/images/capstone/eaeb.jpg), which corresponds to its scores by Rater A (actual risk) and Rater B (predicted risk).  The quadratic weighted kappa is calculated as follows.
@@ -156,13 +155,13 @@ The Radviz plot shows the data points are clustered together and hence predictin
 
 
 
-### Data Preparation
+## Data Preparation
 
 After the data is split into train and test sets with continuous features scaled, a pipeline is used to resample the train data using SMOTE and RandomUnderSampler concurrently. With this, there are 8000 records for each target class.
 
 
 
-### Machine Learning - Classification Models
+## Machine Learning - Classification
 
 The various classification models below are developed and the low Quadratic Weighted Kappa Scores confirmed that classification algorithms are not a good approach for this problem.  
 
@@ -181,7 +180,7 @@ Voting Classifier        | 0.423
 
 
 
-### Machine Learning - Regression Model
+## Machine Learning - Regression
 
 An xgboost (eXtreme Gradient Boosting) regression model is developed with the parameters below.
 
@@ -209,6 +208,6 @@ The xgboost regression model with optimised offsets produced the best score of 0
 
 
 
-### Conclusion
+## Conclusion
 On hindsight, the quadratic weighted kappa metric imposes a heavier weight penalty in misclassifying a 1 as 8 compared to 2. Hence, classification models would not produce good results as they do not take the ordinal nature of the target into consideration. This would explain why a xgboost regression model with optimal offsets would produce better results.
 For future work, I would be explore if a neural network model can produce better results.
