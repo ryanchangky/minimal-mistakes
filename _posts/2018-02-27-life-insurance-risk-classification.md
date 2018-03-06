@@ -22,21 +22,21 @@ This is my capstone project for the Data Science Immersive Course that I am taki
 ### Data
 Data provided consists of 59381 rows with 128 variables describing attributes of life insurance applicants. Besides the target and id variables, there are 13 continuous, 60 categorical, 5 discrete and 48 dummy variables. Other than the continuous variables such as BMI, Wt, Ht and Ins_Age, the remaining features are anonymized. 
 
-Variables            | Description
----------------------|---------------
-ID                   | A unique identifier associated with an application
-Product Info 1-7     | A set of normalised variables relating to the product applied for
-Ins_Age              | Normalised age of applicant
-Ht                   | Normalised height of applicant
-Wt                   | Normalised weight of applicant
-BMI                  | Normalised BMI of applicant
-Employee Info 1-6    | A set of normalised variables related to the employment history of the applicant
-InsuredInfo 1-6      | A set of normalised variables providing information about the applicant
-Insurance History 1-9| A set of normalised variables related to the insurance history of the applicant
-Family Hist 1-5      | A set of normalised variables related to the famikly history of the applicant
-Medical History 1-41 | A set of normalised variables related to the medical history of the applicant
-Medical Keyword 1-48 | Dummy variables relating to the presence of a medical keyword associated with the application
-Response             | Target ordinal variable relating to the final decision associated with an application
+Variables                     | Description
+------------------------------|---------------
+ID                            | A unique identifier associated with an application
+Product Info 1-7              | A set of normalised variables relating to the product applied for
+Ins_Age                       | Normalised age of applicant
+Ht                            | Normalised height of applicant
+Wt                            | Normalised weight of applicant
+BMI                           | Normalised BMI of applicant
+Employee Info 1-6             | A set of normalised variables related to the employment history of the applicant
+InsuredInfo 1-6               | A set of normalised variables providing information about the applicant
+Insurance History 1-9         | A set of normalised variables related to the insurance history of the applicant
+Family Hist 1-5               | A set of normalised variables related to the famikly history of the applicant
+Medical History 1-41          | A set of normalised variables related to the medical history of the applicant
+Medical Keyword 1-48          | Dummy variables relating to the presence of a medical keyword associated with the application
+Response                      | Target ordinal variable relating to the final decision associated with an application
 
 
 ### Evaluation Metric
