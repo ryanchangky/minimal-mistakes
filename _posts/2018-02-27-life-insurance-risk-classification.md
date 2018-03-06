@@ -125,7 +125,7 @@ employment_info_1   |      19                  |0.03
 
 
 
-### Feature Selection 
+## Feature Selection 
 
 #### Selection of Continuous Feature
 
@@ -145,7 +145,7 @@ employment_info_1   |      19                  |0.03
 
 
 
-### Interpretation of Radviz Plot 
+## Interpretation of Radviz Plot 
 
 The Radviz plot projects an N-dimensional data set into simple 2D space where the influence of each dimension can be interpreted as a balance between the influence of all dimensions.
 
@@ -155,7 +155,7 @@ The Radviz plot shows the data points are clustered together and hence predictin
 
 
 
-## Data Preparation
+## Resampling Data
 
 After the data is split into train and test sets with continuous features scaled, a pipeline is used to resample the train data using SMOTE and RandomUnderSampler concurrently. With this, there are 8000 records for each target class.
 
