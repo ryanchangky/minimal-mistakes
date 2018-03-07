@@ -185,13 +185,47 @@ y_pred_lrcv = lrcv.predict(Xs_test)
 print ("Cohen Kappa Score: ", cohen_kappa_score(y_test, y_pred_lrcv, weights="quadratic"))
 ```
 
+```python
+# Support Vector Classifier
+svc = SVC(C=10.0, kernel='rbf',degree=3, gamma=0.001, decision_function_shape='ovr', random_state = 1, verbose=1)
+svc.fit(X_train_res, y_train_res)
+y_pred_svc = svc.predict(Xs_test)
+print ("Cohen Kappa Score: ", cohen_kappa_score(y_test, y_pred_svc, weights="quadratic"))
+```
+
+```python
+#KNeighborsClassifier
+knn = KNeighborsClassifier(n_neighbors=140, n_jobs=-1, algorithm = 'auto' , weights='uniform')
+knn.fit(X_train_res, y_train_res)
+y_pred_knn = knn.predict(Xs_test)
+print ("Cohen Kappa Score: ", cohen_kappa_score(y_test, y_pred_knn, weights="quadratic"))
+```
+
+```python
+# Decision Tree Classifier
+tree = DecisionTreeClassifier(criterion='entropy', max_depth=7, min_samples_split=35,random_state=1)
+tree = tree.fit(X_train_res, y_train_res)
+y_pred_tree = tree.predict(Xs_test)
+print ("Cohen Kappa Score: ", cohen_kappa_score(y_test, y_pred_tree, weights="quadratic"))
+```
+
+```python
+# ExtraTreesClassifier
+etc = ExtraTreesClassifier(bootstrap=True, criterion="gini", max_features=0.50, min_samples_leaf=1,min_samples_split=35, n_estimators=1000,n_jobs=-1, random_state=1)
+etc.fit(X_train_res, y_train_res)
+y_pred_etc = etc.predict(Xs_test)
+print ("Cohen Kappa Score: ", cohen_kappa_score(y_test, y_pred_etc, weights="quadratic"))
+```
+
+
+
 Model                    |Quadratic Weighted Kappa Score
 -------------------------|-------------------------------
 Logistic Regression      | 0.444
-Support Vector Classifier| 0.425
-K Neighbors Classifier   | 0.309
-Decision Tree Classifier | 0.285
-Extra Trees Classifier   | 0.441
+Support Vector Classifier| 0.450
+K Neighbors Classifier   | 0.402
+Decision Tree Classifier | 0.433
+Extra Trees Classifier   | 0.482
 Random Forest Classifier | 0.430
 Bagging Classifier       | 0.438
 Adaboost Classifier      | 0.422
