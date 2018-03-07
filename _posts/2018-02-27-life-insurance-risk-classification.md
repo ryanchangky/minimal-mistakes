@@ -177,6 +177,8 @@ The various classification models below are developed and the low Quadratic Weig
 
 
 **Logistic Regression**
+
+
 Logistic regression is a classification algorithm that uses log of odds as a dependent variable and predicts the probability of occurrence of an event by fitting data to a logit function.
 ```python
 # Logistic Regression
@@ -188,6 +190,8 @@ y_pred_lrcv = lrcv.predict(Xs_test)
 print ("Cohen Kappa Score: ", cohen_kappa_score(y_test, y_pred_lrcv, weights="quadratic"))
 ```
 **Support Vector Classifier**
+
+
 The support vector classifier tries to find the optimal way to separate data points by maximizing the margin around the separating hyperplanes. 
 ```python
 # Support Vector Classifier
@@ -197,6 +201,8 @@ y_pred_svc = svc.predict(Xs_test)
 ```
 
 **K Neighbors Classifier**
+
+
 Classification is based on the most common class amongst its K nearest neighbors measured by a distance or similarity function.
 ```python
 #KNeighborsClassifier
@@ -207,6 +213,8 @@ y_pred_knn = knn.predict(Xs_test)
 
 
 **Decision Tree Classifier**
+
+
 Classification is based on splitting the root nodes into branches forming decision nodes and criterion used is 'gini' for impurity and 'entropy' for information gain.
 ```python
 # Decision Tree Classifier
@@ -218,7 +226,9 @@ y_pred_tree = tree.predict(Xs_test)
 
 **Ensemble Methods**
 
+
 **Extra Trees Classifier**
+
 
 Ae extra trees classifier fits a number of randomized decision trees on various sub-samples of data and uses averaging to improve predictive accuracy and control overfitting.
 ```python
@@ -231,6 +241,7 @@ y_pred_etc = etc.predict(Xs_test)
 
 **Random Forest Classifier**
 
+
 A random forest fits a number of decision tree classifiers on various sub-samples of data and uses averaging to improve predictive accuracy and control overfitting.
 ```python
 # RandomForestClassifier
@@ -241,6 +252,7 @@ y_pred_rfc = rfc.predict(Xs_test)
 
 
 **Bootstrap Aggregating (Bagging)**
+
 
 An ensemble of models developed using random samples of training data with replacement. Individual predictions are aggregated by voting to form the final prediction.
 ``` python
@@ -254,6 +266,7 @@ y_pred_bag = bag.predict(Xs_test)
 
 **Boosting: AdaBoost**
 
+
 The AdaBoost classifier fits a classifier on the original dataset and then fits additional copies of the classifier on the same dataset but where the weights of incorrectly classified instances are adjusted such that the subsequent classifiers focus more on difficult cases.
 ``` python
 # Adaboost Classifier
@@ -264,6 +277,7 @@ y_pred_ada = ada.predict(Xs_test)
 
 
 **Voting Classifier**
+
 
 Classifier for combining several machine learning classifiers for classification via majority voting.
 ```python
@@ -317,6 +331,6 @@ The xgboost regression model with optimised offsets produced the best score of 0
 
 
 ## Conclusion
-On hindsight, the quadratic weighted kappa metric imposes a heavier weight penalty in misclassifying a 1 as 8 compared to 2. Hence, classification models would not produce good results as they do not take the ordinal nature of the target into consideration. This would explain why a xgboost regression model with optimal offsets would produce better results.
+The quadratic weighted kappa metric imposes a heavier weight penalty in misclassifying a 1 as 8 compared to 2. Hence, classification models would not produce good results as they do not take the ordinal nature of the target into consideration. This would explain why a xgboost regression model with optimal offsets would produce better results.
 [The python notebooks for this project can be found here](https://github.com/ryanchangky/projects/tree/master/capstone){:target="_blank"}.
 For future work, I would be explore if a neural network model can produce better results.
