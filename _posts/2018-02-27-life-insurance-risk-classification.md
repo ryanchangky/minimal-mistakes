@@ -171,13 +171,15 @@ pipeline = make_pipeline(SMOTE(ratio={1:8000,2:8000,3:8000,4:8000,5 :8000, 6:800
 X_train_res, y_train_res = pipeline.fit_sample(Xs_train, y_train)
 ```
 
+
+
 ## Machine Learning - Classification
 
 The various classification models below are developed and the low Quadratic Weighted Kappa Scores confirmed that classification algorithms are not a good approach for this problem.  
 
 
-**Logistic Regression**
 
+**Logistic Regression**
 
 Logistic regression is a classification algorithm that uses log of odds as a dependent variable and predicts the probability of occurrence of an event by fitting data to a logit function.
 ```python
@@ -189,8 +191,10 @@ lrcv.fit(X_train_res, y_train_res)
 y_pred_lrcv = lrcv.predict(Xs_test)
 print ("Cohen Kappa Score: ", cohen_kappa_score(y_test, y_pred_lrcv, weights="quadratic"))
 ```
-**Support Vector Classifier**
 
+
+
+**Support Vector Classifier**
 
 The support vector classifier tries to find the optimal way to separate data points by maximizing the margin around the separating hyperplanes. 
 ```python
@@ -200,8 +204,9 @@ svc.fit(X_train_res, y_train_res)
 y_pred_svc = svc.predict(Xs_test)
 ```
 
-**K Neighbors Classifier**
 
+
+**K Neighbors Classifier**
 
 Classification is based on the most common class amongst its K nearest neighbors measured by a distance or similarity function.
 ```python
@@ -212,8 +217,8 @@ y_pred_knn = knn.predict(Xs_test)
 ```
 
 
-**Decision Tree Classifier**
 
+**Decision Tree Classifier**
 
 Classification is based on splitting the root nodes into branches forming decision nodes and criterion used is 'gini' for impurity and 'entropy' for information gain.
 ```python
@@ -224,11 +229,11 @@ y_pred_tree = tree.predict(Xs_test)
 ```
 
 
+
 **Ensemble Methods**
 
 
 **Extra Trees Classifier**
-
 
 Ae extra trees classifier fits a number of randomized decision trees on various sub-samples of data and uses averaging to improve predictive accuracy and control overfitting.
 ```python
@@ -239,8 +244,8 @@ y_pred_etc = etc.predict(Xs_test)
 ```
 
 
-**Random Forest Classifier**
 
+**Random Forest Classifier**
 
 A random forest fits a number of decision tree classifiers on various sub-samples of data and uses averaging to improve predictive accuracy and control overfitting.
 ```python
@@ -251,8 +256,8 @@ y_pred_rfc = rfc.predict(Xs_test)
 ```
 
 
-**Bootstrap Aggregating (Bagging)**
 
+**Bootstrap Aggregating (Bagging)**
 
 An ensemble of models developed using random samples of training data with replacement. Individual predictions are aggregated by voting to form the final prediction.
 ``` python
@@ -264,8 +269,8 @@ y_pred_bag = bag.predict(Xs_test)
 ```
 
 
-**Boosting: AdaBoost**
 
+**Boosting: AdaBoost**
 
 The AdaBoost classifier fits a classifier on the original dataset and then fits additional copies of the classifier on the same dataset but where the weights of incorrectly classified instances are adjusted such that the subsequent classifiers focus more on difficult cases.
 ``` python
@@ -276,8 +281,8 @@ y_pred_ada = ada.predict(Xs_test)
 ```
 
 
-**Voting Classifier**
 
+**Voting Classifier**
 
 Classifier for combining several machine learning classifiers for classification via majority voting.
 ```python
@@ -286,6 +291,7 @@ evc = VotingClassifier(estimators = [('lrcv',lrcv), ('etc',etc),('svc',svc), ('k
 evc.fit(X_train_res, y_train_res)
 y_pred_evc = evc.predict(Xs_test)
 ```
+
 
 
 Model                    |Quadratic Weighted Kappa Score
