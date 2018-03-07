@@ -227,6 +227,8 @@ bootstrap_features=False, n_jobs=-1, random_state=1,verbose = 1)
 bag = bag.fit(X_train_res, y_train_res)
 y_pred_bag = bag.predict(Xs_test)
 ```
+
+The adaboost classifier combines weak classifier algorithm to form strong classifier.
 ``` python
 # Adaboost Classifier
 ada = AdaBoostClassifier(tree,n_estimators =1000, learning_rate=1, random_state=1)
