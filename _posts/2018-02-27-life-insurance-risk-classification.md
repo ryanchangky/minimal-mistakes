@@ -1,8 +1,8 @@
 ---
 tags:
   - python
-  - classification
-  - resampling
+  - machine learning
+  - classification 
 ---
 
 Predicting risk classification for life insurance applicants
@@ -219,6 +219,7 @@ y_pred_tree = tree.predict(Xs_test)
 **Ensemble Methods**
 
 **Extra Trees Classifier**
+
 Ae extra trees classifier fits a number of randomized decision trees on various sub-samples of data and uses averaging to improve predictive accuracy and control overfitting.
 ```python
 # ExtraTreesClassifier
@@ -229,6 +230,7 @@ y_pred_etc = etc.predict(Xs_test)
 
 
 **Random Forest Classifier**
+
 A random forest fits a number of decision tree classifiers on various sub-samples of data and uses averaging to improve predictive accuracy and control overfitting.
 ```python
 # RandomForestClassifier
@@ -239,6 +241,7 @@ y_pred_rfc = rfc.predict(Xs_test)
 
 
 **Bootstrap Aggregating (Bagging)**
+
 An ensemble of models developed using random samples of training data with replacement. Individual predictions are aggregated by voting to form the final prediction.
 ``` python
 # Bagging Classifier
@@ -250,6 +253,7 @@ y_pred_bag = bag.predict(Xs_test)
 
 
 **Boosting: AdaBoost**
+
 The AdaBoost classifier fits a classifier on the original dataset and then fits additional copies of the classifier on the same dataset but where the weights of incorrectly classified instances are adjusted such that the subsequent classifiers focus more on difficult cases.
 ``` python
 # Adaboost Classifier
@@ -260,6 +264,7 @@ y_pred_ada = ada.predict(Xs_test)
 
 
 **Voting Classifier**
+
 Classifier for combining several machine learning classifiers for classification via majority voting.
 ```python
 # Voting Classifier
