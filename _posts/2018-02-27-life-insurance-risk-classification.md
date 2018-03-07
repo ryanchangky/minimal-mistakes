@@ -252,17 +252,16 @@ y_pred_bag = bag.predict(Xs_test)
 ```
 </br>
 </br>
-**Boosting: AdaBoost** </br>
+**Boosting: AdaBoost**</br>
 The AdaBoost classifier fits a classifier on the original dataset and then fits additional copies of the classifier on the same dataset but where the weights of incorrectly classified instances are adjusted such that the subsequent classifiers focus more on difficult cases.
 ``` python
 # Adaboost Classifier
 ada = AdaBoostClassifier(tree,n_estimators =1000, learning_rate=1, random_state=1)
 ada.fit(X_train_res, y_train_res)
 y_pred_ada = ada.predict(Xs_test)
-```
-</br>
-</br>
-**Voting Classifier** </br>
+``` 
+</br></br>
+**Voting Classifier**</br>
 Classifier for combining several machine learning classifiers for classification via majority voting.
 ```python
 # Voting Classifier
