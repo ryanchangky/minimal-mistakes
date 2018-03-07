@@ -20,7 +20,7 @@ This is my capstone project for the Data Science Immersive Course that I am taki
 
 
 ## Data
-Data provided consists of 59381 rows with 128 variables describing attributes of life insurance applicants. Besides the target and id variables, there are 13 continuous, 60 categorical, 5 discrete and 48 dummy variables. Other than the continuous variables such as BMI, Wt, Ht and Ins_Age, the remaining features are anonymized. 
+The dataset used for this project is the Prudential Life Insurance Dataset obtained from Kaggle. The data consists of 59381 rows (applications) with 128 variables describing attributes of life insurance applicants. Besides the target and id variables, there are 13 continuous, 60 categorical, 5 discrete and 48 dummy variables. Other than the continuous variables such as BMI, Wt, Ht and Ins_Age, the remaining features are anonymized. 
 
 Variables                     | Description
 ------------------------------|---------------
@@ -71,14 +71,14 @@ Kappa Score | Scale
 
 ## Exploratory Data Analysis
 
-### Target Variable
+**Target Variable**
 ___
 From the countplot below, the target variable 'response' is imbalanced with 8 as the majority class represented in 33% of the records. The minority classes, 3 and 4 only make up 2% of the records respectively.
 
 [![target]({{ site.url }}{{ site.baseurl }}/images/capstone/target.png)]({{ site.url }}{{ site.baseurl }}/images/capstone/target.png)
 
 
-### Feature Engineering
+**Feature Engineering**
 _____
 As the data has been deliberately anonymized, it is a challenge to engineer new features as we do not know what each feature represents other than BMI, age, height and weight. Logically, the features added below should improve the predictions.
 
@@ -99,7 +99,7 @@ As the data has been deliberately anonymized, it is a challenge to engineer new 
 
 
 
-### Missing Data
+**Missing Data**
 _____
 *  The 8 variables medical_history_10, medical_history_32, medical_history_24, medical_history_15, family_hist_5, family_hist_3, family_hist_2 and insurance_history_5 have more than 35% of missing data and would be dropped.
 
@@ -127,19 +127,19 @@ employment_info_1   |      19                  |0.03
 
 ## Feature Selection 
 
-#### Selection of Continuous Feature
+**Selection of Continuous Feature**
 
 *  The heatmap for continuous variables is created such that features that exhibit multicollinearity are dropped. There is high correlation between bmi and wt at 0.85 and bmi-age and ins-age at 0.88. Hence, wt and ins_age are dropped.
 
 [![heatmap]({{ site.url }}{{ site.baseurl }}/images/capstone/heatmap.png)]({{ site.url }}{{ site.baseurl }}/images/capstone/heatmap.png)
 
-#### One Hot Encoding of Categorical Features
+**One Hot Encoding of Categorical Features**
 *  Categorical variables need to be processed through one-hot encoded before machine learning can take place. Due to the large number of categorical features and their unique inputs, there is a total of 1010 features after one hot encoding.
 
-#### Removing features with near zero variance
+**Removing features with near zero variance**
 *  The features with near zero variance are removed as they would not contribute towards predicting the target variable. Upon removing those features, there is a total of 91 features remaining in the dataframe.
 
-#### Variable Selection using SelectKBest and Chi2
+**Variable Selection using SelectKBest and Chi2**
 *  A chi-square test is performed to select the best 30 categorical features for machine learning.
 
 
