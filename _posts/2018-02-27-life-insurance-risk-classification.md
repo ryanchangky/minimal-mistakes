@@ -348,4 +348,4 @@ The xgboost regression model with optimised offsets produced the best score of 0
 ## Conclusion
 The quadratic weighted kappa metric imposes a heavier weight penalty in misclassifying a 1 as 8 compared to 2. Hence, classification models would not produce good results as they do not take the ordinal nature of the target into consideration. This would explain why a xgboost regression model with optimal offsets would produce better results.
 [The python notebooks for this project can be found here](https://github.com/ryanchangky/projects/tree/master/capstone){:target="_blank"}.
-For future work, I would be explore if a neural network model can produce better results.
+For future work, I would be exploring if a neural network model can produce better results.
