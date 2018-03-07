@@ -20,7 +20,7 @@ This is my capstone project for the Data Science Immersive Course that I am taki
 
 
 ## Data
-The dataset used for this project is the Prudential Life Insurance Dataset obtained from Kaggle. The data consists of 59381 rows (applications) with 128 variables describing attributes of life insurance applicants. Besides the target and id variables, there are 13 continuous, 60 categorical, 5 discrete and 48 dummy variables. Other than the continuous variables such as BMI, Wt, Ht and Ins_Age, the remaining features are anonymized. 
+The dataset used for this project is the Prudential Life Insurance Dataset obtained from [Kaggle] (https://www.kaggle.com/c/prudential-life-insurance-assessment){:target="_blank"}. The data consists of 59381 rows (applications) with 128 variables describing attributes of life insurance applicants. Besides the target and id variables, there are 13 continuous, 60 categorical, 5 discrete and 48 dummy variables. Other than the continuous variables such as BMI, Wt, Ht and Ins_Age, the remaining features are anonymized. 
 
 Variables                     | Description
 ------------------------------|---------------
@@ -211,7 +211,7 @@ xgboost with optimised offsets| 0.575
 The xgboost regression model with optimised offsets produced the best score of 0.575. 
 
 
-
 ## Conclusion
 On hindsight, the quadratic weighted kappa metric imposes a heavier weight penalty in misclassifying a 1 as 8 compared to 2. Hence, classification models would not produce good results as they do not take the ordinal nature of the target into consideration. This would explain why a xgboost regression model with optimal offsets would produce better results.
+[The python notebooks for this project can be found here](https://github.com/ryanchangky/projects/tree/master/capstone){:target="_blank"}.
 For future work, I would be explore if a neural network model can produce better results.
