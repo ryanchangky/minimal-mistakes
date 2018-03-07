@@ -157,13 +157,19 @@ The Radviz plot shows the data points are clustered together and hence predictin
 
 The data is split into training and test sets with continuous features scaled.
 
-[![ss]({{ site.url }}{{ site.baseurl }}/images/capstone/ss.png)]({{ site.url }}{{ site.baseurl }}/images/capstone/ss.png)
+```python
+ss = StandardScaler()
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, stratify=y, random_state=1)
+Xs_train, Xs_test = ss.fit_transform(X_train), ss.fit(X_train).transform(X_test)
+```
 
 A pipeline is used to resample the training data to 8000 records for each target class using Synthetic Minority Over-sampling Technique (SMOTE) and RandomUnderSampler concurrently. For SMOTE, the minority class is over-sampled by taking each minority class sample and introducing synthetic data points along the line segments joining the k minority class nearest neighbors
 
-[![resample]({{ site.url }}{{ site.baseurl }}/images/capstone/resample.png)]({{ site.url }}{{ site.baseurl }}/images/capstone/resample.png)
+```python
+pipeline = make_pipeline(SMOTE(ratio={1:8000,2:8000,3:8000,4:8000,5 :8000, 6:8000, 7:8000}, random_state=1), RandomUnderSampler(ratio={8:8000}, random_state=1))
 
-[![resample2]({{ site.url }}{{ site.baseurl }}/images/capstone/resample2.png)]({{ site.url }}{{ site.baseurl }}/images/capstone/resample2.png)
+X_train_res, y_train_res = pipeline.fit_sample(Xs_train, y_train)
+```
 
 ## Machine Learning - Classification
 
