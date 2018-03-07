@@ -173,29 +173,22 @@ X_train_res, y_train_res = pipeline.fit_sample(Xs_train, y_train)
 
 
 
-## Machine Learning - Classification
-
+## Machine Learning - Classification </br>
 The various classification models below are developed and the low Quadratic Weighted Kappa Scores confirmed that classification algorithms are not a good approach for this problem.  
-
-
-
-**Logistic Regression**
-
+</br>
+**Logistic Regression** </br>
 Logistic regression is a classification algorithm that uses log of odds as a dependent variable and predicts the probability of occurrence of an event by fitting data to a logit function.
 ```python
 # Logistic Regression
 lrcv = LogisticRegressionCV(n_jobs=-1,penalty='l2',multi_class='multinomial',solver='newton-cg',scoring=kappa_scorer,
 verbose = 1, random_state=1)
-
 lrcv.fit(X_train_res, y_train_res)
 y_pred_lrcv = lrcv.predict(Xs_test)
 print ("Cohen Kappa Score: ", cohen_kappa_score(y_test, y_pred_lrcv, weights="quadratic"))
 ```
-
-
-
-**Support Vector Classifier**
-
+</br>
+</br>
+**Support Vector Classifier** </br>
 The support vector classifier tries to find the optimal way to separate data points by maximizing the margin around the separating hyperplanes. 
 ```python
 # Support Vector Classifier
@@ -203,11 +196,9 @@ svc = SVC(C=10.0, kernel='rbf',degree=3, gamma=0.001, decision_function_shape='o
 svc.fit(X_train_res, y_train_res)
 y_pred_svc = svc.predict(Xs_test)
 ```
-
-
-
-**K Neighbors Classifier**
-
+</br>
+</br>
+**K Neighbors Classifier** </br>
 Classification is based on the most common class amongst its K nearest neighbors measured by a distance or similarity function.
 ```python
 #KNeighborsClassifier
@@ -215,11 +206,9 @@ knn = KNeighborsClassifier(n_neighbors=140, n_jobs=-1, algorithm = 'auto' , weig
 knn.fit(X_train_res, y_train_res)
 y_pred_knn = knn.predict(Xs_test)
 ```
-
-
-
-**Decision Tree Classifier**
-
+</br>
+</br>
+**Decision Tree Classifier** </br>
 Classification is based on splitting the root nodes into branches forming decision nodes and criterion used is 'gini' for impurity and 'entropy' for information gain.
 ```python
 # Decision Tree Classifier
@@ -227,14 +216,11 @@ tree = DecisionTreeClassifier(criterion='entropy', max_depth=7, min_samples_spli
 tree = tree.fit(X_train_res, y_train_res)
 y_pred_tree = tree.predict(Xs_test)
 ```
-
-
-
+</br>
+</br>
 **Ensemble Methods**
-
-
-**Extra Trees Classifier**
-
+</br>
+**Extra Trees Classifier** </br>
 Ae extra trees classifier fits a number of randomized decision trees on various sub-samples of data and uses averaging to improve predictive accuracy and control overfitting.
 ```python
 # ExtraTreesClassifier
@@ -242,11 +228,9 @@ etc = ExtraTreesClassifier(bootstrap=True, criterion="gini", max_features=0.50, 
 etc.fit(X_train_res, y_train_res)
 y_pred_etc = etc.predict(Xs_test)
 ```
-
-
-
-**Random Forest Classifier**
-
+</br>
+</br>
+**Random Forest Classifier** </br>
 A random forest fits a number of decision tree classifiers on various sub-samples of data and uses averaging to improve predictive accuracy and control overfitting.
 ```python
 # RandomForestClassifier
@@ -254,11 +238,10 @@ rfc = RandomForestClassifier(n_estimators=1000,min_samples_split= 5,random_state
 rfc.fit(Xs_train,y_train)
 y_pred_rfc = rfc.predict(Xs_test)
 ```
-
-
-
-**Bootstrap Aggregating (Bagging)**
-
+</br>
+</br>
+**Bootstrap Aggregating (Bagging)** </br>
+</br>
 An ensemble of models developed using random samples of training data with replacement. Individual predictions are aggregated by voting to form the final prediction.
 ``` python
 # Bagging Classifier
@@ -267,11 +250,9 @@ bootstrap_features=False, n_jobs=-1, random_state=1,verbose = 1)
 bag = bag.fit(X_train_res, y_train_res)
 y_pred_bag = bag.predict(Xs_test)
 ```
-
-
-
-**Boosting: AdaBoost**
-
+</br>
+</br>
+**Boosting: AdaBoost** </br>
 The AdaBoost classifier fits a classifier on the original dataset and then fits additional copies of the classifier on the same dataset but where the weights of incorrectly classified instances are adjusted such that the subsequent classifiers focus more on difficult cases.
 ``` python
 # Adaboost Classifier
@@ -279,11 +260,9 @@ ada = AdaBoostClassifier(tree,n_estimators =1000, learning_rate=1, random_state=
 ada.fit(X_train_res, y_train_res)
 y_pred_ada = ada.predict(Xs_test)
 ```
-
-
-
-**Voting Classifier**
-
+</br>
+</br>
+**Voting Classifier** </br>
 Classifier for combining several machine learning classifiers for classification via majority voting.
 ```python
 # Voting Classifier
@@ -291,8 +270,8 @@ evc = VotingClassifier(estimators = [('lrcv',lrcv), ('etc',etc),('svc',svc), ('k
 evc.fit(X_train_res, y_train_res)
 y_pred_evc = evc.predict(Xs_test)
 ```
-
-
+</br>
+</br>
 
 Model                    |Quadratic Weighted Kappa Score
 -------------------------|-------------------------------
