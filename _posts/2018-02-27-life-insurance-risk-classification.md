@@ -155,7 +155,11 @@ The Radviz plot shows the data points are clustered together and hence predictin
 
 ## Resampling Data
 
-After the data is split into training and test sets with continuous features scaled, a pipeline is used to resample the training data to 8000 records for each target class using Synthetic Minority Over-sampling Technique (SMOTE) and RandomUnderSampler concurrently. SMOTE is a 
+The data is split into training and test sets with continuous features scaled.
+
+[![ss]({{ site.url }}{{ site.baseurl }}/images/capstone/ss.png)]({{ site.url }}{{ site.baseurl }}/images/capstone/ss.png)
+
+A pipeline is used to resample the training data to 8000 records for each target class using Synthetic Minority Over-sampling Technique (SMOTE) and RandomUnderSampler concurrently. For SMOTE, the minority class is over-sampled by taking each minority class sample and introducing synthetic data points along the line segments joining the k minority class nearest neighbors
 
 [![resample]({{ site.url }}{{ site.baseurl }}/images/capstone/resample.png)]({{ site.url }}{{ site.baseurl }}/images/capstone/resample.png)
 
