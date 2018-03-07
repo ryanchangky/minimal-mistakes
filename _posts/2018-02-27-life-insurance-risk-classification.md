@@ -315,6 +315,26 @@ eval_metric            |   rmse
 colsample_bytree       |    0.3
 num_rounds             |    720  
 
+```python
+param = {'max_depth':7, 'eta':0.05, 'silent':1, 'min_child_weight':360, 'subsample' : 0.85 ,"early_stopping_rounds":10,
+          "objective"   : "reg:linear",'eval_metric': 'rmse','colsample_bytree':0.3}
+
+num_round=720
+num_classes = 8
+
+xgtrain=xgb.DMatrix(Xs_train,label=y_train)
+xgtest=xgb.DMatrix(Xs_test, label=y_test)
+
+watchlist  = [(xgtrain,'train')]
+
+model = xgb.train(param, xgtrain, num_round, watchlist)
+
+train_preds = model.predict(xgtrain)#, ntree_limit=model.best_iteration)
+print('Training score is:', eval_wrapper(train_preds, y_train)) 
+test_preds = model.predict(xgtest) #, ntree_limit=model.best_iteration)
+print('Test score is:', eval_wrapper(test_preds, y_test)) 
+```
+
 The predicted target values rounded off to the nearest number, yielded a test score of 0.512 which is higher than any of the classification models. In order to improve on the Quadratic Weighted Kappa score, the offsets from the train predictions are optimised using the fmin_powell function and applied it to the test predictions.
 
 Model                         |  Quadratic Weighted Kappa Score
