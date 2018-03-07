@@ -175,6 +175,16 @@ X_train_res, y_train_res = pipeline.fit_sample(Xs_train, y_train)
 
 The various classification models below are developed and the low Quadratic Weighted Kappa Scores confirmed that classification algorithms are not a good approach for this problem.  
 
+```python
+# Logistic Regression
+lrcv = LogisticRegressionCV(n_jobs=-1,penalty='l2',multi_class='multinomial',solver='newton-cg',scoring=kappa_scorer,
+verbose = 1, random_state=1)
+
+lrcv.fit(X_train_res, y_train_res)
+y_pred_lrcv = lrcv.predict(Xs_test)
+print ("Cohen Kappa Score: ", cohen_kappa_score(y_test, y_pred_lrcv, weights="quadratic"))
+```
+
 Model                    |Quadratic Weighted Kappa Score
 -------------------------|-------------------------------
 Logistic Regression      | 0.444
