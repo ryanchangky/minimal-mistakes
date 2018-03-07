@@ -292,8 +292,8 @@ Decision Tree Classifier | 0.433
 Extra Trees Classifier   | 0.482
 Random Forest Classifier | 0.459
 Bagging Classifier       | 0.444
-Adaboost Classifier      | 0.456
-Voting Classifier        | 0.434
+Adaboost Classifier      | 0.453
+Voting Classifier        | 0.467
 
 
 
