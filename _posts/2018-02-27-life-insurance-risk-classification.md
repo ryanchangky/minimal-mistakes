@@ -70,7 +70,6 @@ Kappa Score | Scale
 
 
 ## Exploratory Data Analysis
-
 **Target Variable**
 
 From the countplot below, the target variable 'response' is imbalanced with 8 as the majority class represented in 33% of the records. The minority classes, 3 and 4 only make up 2% of the records respectively.
@@ -163,6 +162,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, stratif
 Xs_train, Xs_test = ss.fit_transform(X_train), ss.fit(X_train).transform(X_test)
 ```
 
+
 A pipeline is used to resample the training data to 8000 records for each target class using Synthetic Minority Over-sampling Technique (SMOTE) and RandomUnderSampler concurrently. For SMOTE, the minority class is over-sampled by taking each minority class sample and introducing synthetic data points along the line segments joining the k minority class nearest neighbors
 
 ```python
@@ -177,7 +177,7 @@ The various classification models below are developed and the low Quadratic Weig
 
 Model                    |Quadratic Weighted Kappa Score
 -------------------------|-------------------------------
-Logistic Regression      | 0.416
+Logistic Regression      | 0.444
 Support Vector Classifier| 0.425
 K Neighbors Classifier   | 0.309
 Decision Tree Classifier | 0.285
