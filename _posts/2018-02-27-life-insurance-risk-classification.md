@@ -33,7 +33,7 @@ BMI                           | Normalised BMI of applicant
 Employee Info 1-6             | A set of normalised variables related to the employment history of the applicant
 InsuredInfo 1-6               | A set of normalised variables providing information about the applicant
 Insurance History 1-9         | A set of normalised variables related to the insurance history of the applicant
-Family Hist 1-5               | A set of normalised variables related to the famikly history of the applicant
+Family Hist 1-5               | A set of normalised variables related to the family history of the applicant
 Medical History 1-41          | A set of normalised variables related to the medical history of the applicant
 Medical Keyword 1-48          | Dummy variables relating to the presence of a medical keyword associated with the application
 Response                      | Target ordinal variable relating to the final decision associated with an application
