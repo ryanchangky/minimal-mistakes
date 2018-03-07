@@ -190,7 +190,6 @@ print ("Cohen Kappa Score: ", cohen_kappa_score(y_test, y_pred_lrcv, weights="qu
 svc = SVC(C=10.0, kernel='rbf',degree=3, gamma=0.001, decision_function_shape='ovr', random_state = 1, verbose=1)
 svc.fit(X_train_res, y_train_res)
 y_pred_svc = svc.predict(Xs_test)
-print ("Cohen Kappa Score: ", cohen_kappa_score(y_test, y_pred_svc, weights="quadratic"))
 ```
 
 ```python
@@ -198,7 +197,6 @@ print ("Cohen Kappa Score: ", cohen_kappa_score(y_test, y_pred_svc, weights="qua
 knn = KNeighborsClassifier(n_neighbors=140, n_jobs=-1, algorithm = 'auto' , weights='uniform')
 knn.fit(X_train_res, y_train_res)
 y_pred_knn = knn.predict(Xs_test)
-print ("Cohen Kappa Score: ", cohen_kappa_score(y_test, y_pred_knn, weights="quadratic"))
 ```
 
 ```python
@@ -206,7 +204,6 @@ print ("Cohen Kappa Score: ", cohen_kappa_score(y_test, y_pred_knn, weights="qua
 tree = DecisionTreeClassifier(criterion='entropy', max_depth=7, min_samples_split=35,random_state=1)
 tree = tree.fit(X_train_res, y_train_res)
 y_pred_tree = tree.predict(Xs_test)
-print ("Cohen Kappa Score: ", cohen_kappa_score(y_test, y_pred_tree, weights="quadratic"))
 ```
 
 ```python
@@ -214,7 +211,27 @@ print ("Cohen Kappa Score: ", cohen_kappa_score(y_test, y_pred_tree, weights="qu
 etc = ExtraTreesClassifier(bootstrap=True, criterion="gini", max_features=0.50, min_samples_leaf=1,min_samples_split=35, n_estimators=1000,n_jobs=-1, random_state=1)
 etc.fit(X_train_res, y_train_res)
 y_pred_etc = etc.predict(Xs_test)
-print ("Cohen Kappa Score: ", cohen_kappa_score(y_test, y_pred_etc, weights="quadratic"))
+```
+
+```python
+# RandomForestClassifier
+rfc = RandomForestClassifier(n_estimators=1000,min_samples_split= 5,random_state=1,n_jobs=-1, verbose=1)
+rfc.fit(Xs_train,y_train)
+y_pred_rfc = rfc.predict(Xs_test)
+```
+
+``` python
+# Bagging Classifier
+bag = BaggingClassifier(base_estimator=tree,n_estimators=1000, max_samples=0.5, max_features=1.0, bootstrap=True, 
+bootstrap_features=False, n_jobs=-1, random_state=1,verbose = 1)
+bag = bag.fit(X_train_res, y_train_res)
+y_pred_bag = bag.predict(Xs_test)
+```
+``` python
+# Adaboost Classifier
+ada = AdaBoostClassifier(tree,n_estimators =1000, learning_rate=1, random_state=1)
+ada.fit(X_train_res, y_train_res)
+y_pred_ada = ada.predict(Xs_test)
 ```
 
 
@@ -226,8 +243,8 @@ Support Vector Classifier| 0.450
 K Neighbors Classifier   | 0.402
 Decision Tree Classifier | 0.433
 Extra Trees Classifier   | 0.482
-Random Forest Classifier | 0.430
-Bagging Classifier       | 0.438
+Random Forest Classifier | 0.459
+Bagging Classifier       | 0.444
 Adaboost Classifier      | 0.422
 Voting Classifier        | 0.423
 
