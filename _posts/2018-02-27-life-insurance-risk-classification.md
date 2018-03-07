@@ -122,9 +122,6 @@ employment_info_4   |    6779                  |11.4
 employment_info_1   |      19                  |0.03
 
 
-
-
-
 ## Feature Selection 
 
 **Selection of Continuous Feature**
@@ -134,7 +131,7 @@ employment_info_1   |      19                  |0.03
 [![heatmap]({{ site.url }}{{ site.baseurl }}/images/capstone/heatmap.png)]({{ site.url }}{{ site.baseurl }}/images/capstone/heatmap.png)
 
 **One Hot Encoding of Categorical Features**
-*  Categorical variables need to be processed through one-hot encoded before machine learning can take place. Due to the large number of categorical features and their unique inputs, there is a total of 1010 features after one hot encoding.
+*  Categorical variables need to be processed through one-hot encoding before machine learning can take place. Due to the large number of categorical features and their unique inputs, there is a total of 1010 features after one hot encoding.
 
 **Removing features with near zero variance**
 *  The features with near zero variance are removed as they would not contribute towards predicting the target variable. Upon removing those features, there is a total of 91 features remaining in the dataframe.
@@ -142,7 +139,8 @@ employment_info_1   |      19                  |0.03
 **Variable Selection using SelectKBest and Chi2**
 *  A chi-square test is performed to select the best 30 categorical features for machine learning.
 
-
+Upon completion of the steps above, the following 40 features are selected:
+product_info_4, ht, bmi, bmi_age, employment_info_1, employment_info_4, employment_info_6, family_hist_4, med_col, countna, medical_keyword_3, medical_keyword_15, medical_keyword_23, medical_keyword_25, medical_keyword_37, medical_keyword_40, medical_keyword_48, product_info_2_3, product_info_2_4, product_info_2_5, product_info_2_7, product_info_3_10, employment_info_3_3, employment_info_5_3, insuredinfo_1_2, insuredinfo_6_2, family_hist_1_2, medical_history_1_7.9621722253, medical_history_2_112, medical_history_2_162, medical_history_4_2, medical_history_12_3, medical_history_16_3, medical_history_18_2, medical_history_23_3, medical_history_28_2, product_info_2_char_1, product_info_2_num_1, product_info_2_num_2, product_info_2_num_4
 
 
 ## Interpretation of Radviz Plot 
@@ -157,7 +155,7 @@ The Radviz plot shows the data points are clustered together and hence predictin
 
 ## Resampling Data
 
-After the data is split into train and test sets with continuous features scaled, a pipeline is used to resample the train data using SMOTE and RandomUnderSampler concurrently. With this, there are 8000 records for each target class.
+After the data is split into training and test sets with continuous features scaled, a pipeline is used to resample the training data to 8000 records for each target class using Synthetic Minority Over-sampling Technique (SMOTE) and RandomUnderSampler concurrently. SMOTE is a 
 
 
 
