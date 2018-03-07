@@ -20,7 +20,7 @@ This is my capstone project for the Data Science Immersive Course that I am taki
 
 
 ## Data
-The dataset used for this project is the Prudential Life Insurance Dataset obtained from [Kaggle](https://www.kaggle.com/c/prudential-life-insurance-assessment). The data consists of 59381 rows (applications) with 128 variables describing attributes of life insurance applicants. Besides the target and id variables, there are 13 continuous, 60 categorical, 5 discrete and 48 dummy variables. Other than the continuous variables such as BMI, Wt, Ht and Ins_Age, the remaining features are anonymized. 
+The dataset used for this project is the Prudential Life Insurance Dataset obtained from [Kaggle](https://www.kaggle.com/c/prudential-life-insurance-assessment){:target="_blank"}. The data consists of 59381 rows (applications) with 128 variables describing attributes of life insurance applicants. Besides the target and id variables, there are 13 continuous, 60 categorical, 5 discrete and 48 dummy variables. Other than the continuous variables such as BMI, Wt, Ht and Ins_Age, the remaining features are anonymized. 
 
 Variables                     | Description
 ------------------------------|---------------
