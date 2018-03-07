@@ -72,14 +72,14 @@ Kappa Score | Scale
 ## Exploratory Data Analysis
 
 **Target Variable**
-___
+
 From the countplot below, the target variable 'response' is imbalanced with 8 as the majority class represented in 33% of the records. The minority classes, 3 and 4 only make up 2% of the records respectively.
 
 [![target]({{ site.url }}{{ site.baseurl }}/images/capstone/target.png)]({{ site.url }}{{ site.baseurl }}/images/capstone/target.png)
 
 
 **Feature Engineering**
-_____
+
 As the data has been deliberately anonymized, it is a challenge to engineer new features as we do not know what each feature represents other than BMI, age, height and weight. Logically, the features added below should improve the predictions.
 
 
@@ -100,7 +100,7 @@ As the data has been deliberately anonymized, it is a challenge to engineer new 
 
 
 **Missing Data**
-_____
+
 *  The 8 variables medical_history_10, medical_history_32, medical_history_24, medical_history_15, family_hist_5, family_hist_3, family_hist_2 and insurance_history_5 have more than 35% of missing data and would be dropped.
 
 *  The remaining missing data is imputed with the mean of the respective features.
