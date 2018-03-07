@@ -205,6 +205,7 @@ tree = DecisionTreeClassifier(criterion='entropy', max_depth=7, min_samples_spli
 tree = tree.fit(X_train_res, y_train_res)
 y_pred_tree = tree.predict(Xs_test)
 ```
+**Ensemble Methods**
 
 ```python
 # ExtraTreesClassifier
